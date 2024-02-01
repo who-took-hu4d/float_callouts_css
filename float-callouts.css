@@ -1,0 +1,69 @@
+/* callout alts */
+.callout[data-callout-metadata~="right"] {
+    float: right;
+    clear: right;
+    width: 30%;
+    margin: var(--infobox-margin);
+  }
+  .callout[data-callout-metadata~="left"] {
+    float: left;
+    clear: left;
+    width: 30%;
+    margin: var(--infobox-margin-left);
+  }
+  body:not(.info-normal) .callout[data-callout="info"]:not([data-callout-metadata~="normal"]) .callout-title {
+    background-color: var(--h6-background);
+    border: none;
+    padding:0.2em;
+  }
+  /*
+  /* callout classes */
+  .hide-callout-title .callout[data-callout="info"] .callout-content p:first-of-type{
+  margin: 0px; /* close gaps in infobox when info callout title is hidden */
+  }
+  .hide-callout-title .callout[data-callout="info"] .callout-title {
+    display: none;
+  }
+  
+  /* make image full size inside a callout */
+  .markdown-rendered .callout-content img, .cm-contentContainer .callout-content img {
+    float: none;
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+  }
+  
+  
+  .callout-fold svg {
+    color: var(--text-normal);
+  }
+  
+  .callout:not([data-callout="info"]),
+  .info-normal .callout[data-callout="info"] {
+    --h6-background: rgba(var(--callout-color), 20%); /* make header 6 match callout color */
+  }
+  
+  /* hide callout icons option */
+  .callout-icon .svg-icon {
+    display: none;
+  }
+
+  .callout[data-callout="info"] .callout-title {
+    display: none;
+  }
+
+  /* Style Info Callouts as infoboxes */
+
+  body {
+    --infobox-position: right;
+    }
+body:not(.info-normal) .callout[data-callout="info"]:not([data-callout-metadata~="normal"]), .callout[data-callout-metadata~="info"] {
+    float: var(--infobox-position);
+    clear: var(--infobox-position);
+    width: 30%;
+    margin: var(--infobox-margin);
+    background-color: var(--background-secondary-alt);
+    border: 1px solid var(--background-modifier-border);
+  }
